@@ -1,0 +1,96 @@
+
+/* font-family: 'Open Sans', sans-serif; */
+:root {
+  /* -- Header -- */
+  --header-height: 5rem;
+
+  /* -- Colors -- */
+  --primary-color: hsl(354, 78%, 60%);
+  --body-color: white;
+  --text-color: #fff;
+  --title-color: black;
+
+  /* -- Fonts and tipography */
+  --body-font: 'Poppins', sans-serif;
+  --title-font: 'Poppins', sans-serif;
+  --large-font: 3rem;
+  --big-font: 2rem;
+  --medium-font: 1.5rem;
+  --normal-font: 1rem;
+  --small-font: 0.8rem;
+  --tiny-font: 0.75rem;
+
+  /* -- Font Weight -- */
+  --Weight-tiny: 300;
+  --Weight-normal: 400;
+  --Weight-medium: 600;
+  --Weight-bold: 700;
+
+  /* -- Margins and Paddings -- */
+  --sp-0-5: 0.5em;
+  --sp-0-75: 0.75em;
+  --sp-1: 1em;
+  --sp-1-5: 1.5em;
+  --sp-2: 2em;
+  --sp-2-5: 2.5em;
+  --sp-3: 3em;
+  --sp-5: 5em;
+
+  /* -- z-index -- */
+  --z-fixed: 1;
+  --z-modal: 2;
+}
+
+
+body {
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  font-family: var(--body-font);
+  font-size: var(--normal-font);
+  font-weight: var(--Weight-normal);
+  color: var(--tex-color);
+
+  background-color: #FAFAFA;
+
+  color: black;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+
+#root {
+  width: inherit;
+  min-width: inherit;
+  height: inherit;
+}
+/* --- PRINCIAPL --- */
+.principal {
+  min-width: inherit;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5em;
+  height: 100vh;
+}
+.darkmode {
+  background-color: black;
+  color: white;
+}
+
+/* --- CONTENT --- */
+.content {
+  width: inherit;
+  min-width: inherit;
+  height: auto;
+  padding-top: 6em;
+  scroll-behavior: smooth;
+}
+
+
+
+

@@ -1,0 +1,103 @@
+/* --- PROJECTS --- */
+.principal__projects {
+  width: 100vw;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  gap: 3em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 10px;
+}
+.projects__title {
+  font-size: 3em;
+  text-align: center;
+  font-weight: 400;
+}
+.slider__box {
+  max-width: 1200px;
+  position: relative;
+}
+.slider__box--carousel {
+  width: auto;
+  display: flex;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 1em;
+  scroll-behavior: smooth;
+}
+.container__imgSlider {
+  height: 340px;
+  margin-left: 1em;
+  width: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  padding: 0.8em;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+}
+.container__imgSlider img {
+  height: inherit;
+}
+.container__imgSlider-span {
+  text-decoration: none;
+  padding-top: 1.5em;
+  padding-left: 0.5em;
+  
+  height: 4em;
+}
+.container__imgSlider-span a{
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  color: black;
+  gap: 3em;
+}
+.redirection {
+  color: white;
+  font-size: 3em;
+}
+.container__imgSlider-span:hover .redirection,
+.redirection:hover {
+  color: lightgray;
+}
+
+.PreviusNext {
+  top: 50%;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  position: absolute;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 46px;
+  background: #fff;
+  border-radius: 50%;
+  scroll-behavior: smooth;
+  box-shadow: 0 2px 2px gray;
+}
+.previus {
+  left: -3px;
+}
+.next {
+  right: -10px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .slider__box {
+    width: 90%;
+  }
+  .container__imgSlider {
+    width: calc(100% / 2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .container__imgSlider {
+    width: 100%;
+  }
+}
