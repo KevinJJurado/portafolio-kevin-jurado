@@ -87,7 +87,6 @@ body {
   width: inherit;
   min-width: inherit;
   height: auto;
-  padding-top: 6em;
   scroll-behavior: smooth;
 }
 

@@ -5,7 +5,7 @@ const Navbar = ({ setDarkMode, darkMode }) => {
   const [showNaBar, setShowNaBar] = useState(false)
 
   const handleShowNav = () => {
-    setShowNaBar(true)
+    setShowNaBar(!showNaBar)
   }
   const handleCloseNav = () => {
     setShowNaBar(false)

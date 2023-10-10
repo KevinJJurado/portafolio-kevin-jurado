@@ -3,34 +3,21 @@
 const AboutMe = () => {
   return (
     <div className="aboutMe" id="aboutMe">
-      <h2 className="aboutMe__name">Acerca de Mi</h2>
+      <h2 className="aboutMe__name">Acerca de Mí</h2>
       <div className="aboutMe__engineer">
         <div className="aboutMe__imgtext">
-          <h3>Ingeniero</h3>
+          <h3>Desarrollador</h3>
           <p>
-            "Hola, soy ingeniero electrónico. Mi enfoque principal se encuentra en la automatización y el control, una rama apasionante de la electrónica. Durante mi carrera, desarrollé habilidades en diseño de hardware y firmware, así como en modelado 3D utilizando SolidWorks. Esta combinación de conocimientos me permitió trabajar en proyectos de automatización y control, donde también adquirí experiencia en desarrollo de software. Estoy emocionado por seguir explorando las posibilidades que esta combinación de habilidades ofrece en mi carrera profesional."
+            "Soy un desarrollador de software con experiencia en una variedad de tecnologías, incluyendo JavaScript, HTML, CSS y React.js. Mi pasión por la programación va más allá de un simple trabajo; es un compromiso constante con la mejora. Estoy emocionado por la oportunidad de aplicar mis conocimientos y habilidades en tu empresa para contribuir al éxito del equipo."
           </p>
         </div>
         <div className="aboutMe__developer">
-          <h3>Desarrollador</h3>
+          <h3>Ingeniero</h3>
           <p>
-            "Después de graduarme como ingeniero electrónico, me adentré en el emocionante mundo del desarrollo web. La oportunidad de crear páginas, maquetar diseños y dar vida a diversas funcionalidades me atrajo profundamente. Sin embargo, lo que realmente impulsó mi aprendizaje y consolidó mis bases fue mi experiencia en Academlo. Durante mi tiempo allí, tuve el privilegio de aprender de profesores excepcionales y colaborar con compañeros apasionados en varios proyectos. En la siguiente sección, podrás explorar algunos de estos proyectos que representan mi crecimiento como desarrollador."
+            "Además de mi experiencia como desarrollador de software, también soy Ingeniero Electrónico con un enfoque en automatización y control. Esta experiencia me ha proporcionado una sólida base en programación, que he aplicado en el desarrollo de hardware y firmware, complementando mis habilidades como desarrollador."
           </p>
         </div>
-        <div className="loader">
-          <div className="cell d-0"></div>
-          <div className="cell d-1"></div>
-          <div className="cell d-2"></div>
-
-          <div className="cell d-1"></div>
-          <div className="cell d-2"></div>
-
-          <div className="cell d-2"></div>
-          <div className="cell d-3"></div>
-
-          <div className="cell d-3"></div>
-          <div className="cell d-4"></div>
-        </div>
+        <img className="aboutMe__img" src="https://media-public.canva.com/BZzls/MAEvmIBZzls/1/tl.png" alt="" />
       </div>
 
     </div>

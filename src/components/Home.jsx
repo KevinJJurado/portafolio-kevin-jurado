@@ -12,7 +12,13 @@ const Home = () => {
       <div className="Home__img">
         <img src="./Me.png" alt="" />
       </div>
-      
+      <div className='Home__btns'>
+        <button className='home__btn--cv'>
+          <span>Descargar CV</span>
+        </button>
+        <a href="#aboutMe"><button className='Home__btn-ab'>Acerca de Mí</button></a>
+      </div>
+
     </div>
   )
 }
