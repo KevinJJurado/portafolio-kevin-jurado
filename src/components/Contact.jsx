@@ -4,7 +4,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    emailjs.sendForm('service_6xgnuut','template_999kkk9',e.target,'user_PeLTIQIqkNrsBlMf5YG6H').then(res=>{
+    emailjs.sendForm('service_2oxksqj','template_i17l0d7',e.target,'YR1nRKFY2DFWpbAJx').then(res=>{
       console.log(res);
   })
   }

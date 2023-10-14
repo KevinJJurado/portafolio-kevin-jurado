@@ -1,132 +1,92 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 const Projects = () => {
+  const [currentSlide, setCurrentSlide] = useState(0)
 
-  useEffect(() => {
-    const carousel = document.querySelector('#sliderId')
-    const arrowIcons = document.querySelectorAll('.PreviusNext')
-    const firstImage = document.querySelectorAll('.container__imgSlider')[0];
-
-    let firstImageWidth = firstImage.clientWidth + 0 
-    let isDragStart = false, prevPageX, prevScrollLeft
-
-    arrowIcons.forEach(icon => {
-      icon.addEventListener('click', () => {
-
-        carousel.scrollLeft += icon.id == 'left' ? - firstImageWidth : firstImageWidth
-      })
-    });
-    const dragStart = (e) => {
-      isDragStart = true
-      prevPageX = e.pageX
-      prevScrollLeft = carousel.scrollLeft
+  const sliders = [
+    {
+      title: 'App Music',
+      image: '/app_music.PNG',
+      site:'https://app-music-kevin-jurado.netlify.app/',
+      paragraph: 'Pagina en la cual se despliega lista de canciones y tambien se puede crear una lista de reporducción, todo esto extraido de la API de spotify y de una API proporcionada por Academlo',
+      tecnologys: 'HTML, CSS, API, React JS',
+      github: 'https://github.com/KevinJJurado/app-music-kevin-jurado'
+    },
+    {
+      title: 'User Crud',
+      image: '/userCrud.PNG',
+      site:'https://userscrudkevinjurado.netlify.app/',
+      paragraph: 'Pagina en la cual se puede crear usuarios, borrar y actualizar, todo esto desde una api publica proporcionada por Academlo',
+      tecnologys: 'HTML, CSS, API, React JS',
+      github: 'https://github.com/KevinJJurado/users_crud'
+    },
+    {
+      title: 'Pokedex',
+      image: '/pokedex.PNG',
+      site:'https://pokedex-kevin-jurado.netlify.app/',
+      paragraph: 'Pagina que contiene informacion de la serie animada pokemon, todo extraido de un API publica',
+      tecnologys: 'HTML, CSS, API, React JS',
+      github: 'https://github.com/KevinJJurado/pokedex-kevin-jurado'
+    },
+    {
+      title: 'Rick and Morty',
+      image: '/RickandMorty.PNG',
+      site:'https://rickandmorty-kevin-jurado.netlify.app/',
+      paragraph: 'Pagina que contiene informacion de la serie animada Rick and Morty, todo extraido de un API publica',
+      tecnologys: 'HTML, CSS, API, React JS',
+      github: 'https://github.com/KevinJJurado/entregable3RickandMorty'
+    },
+    {
+      title: 'Weather App',
+      image: '/weatherApp.PNG',
+      site:'https://weatherapp-kevin-jurado.netlify.app/',
+      paragraph: 'Pagina que contiene informacion del clima en tiempo real, información extraida de un API publica',
+      tecnologys: 'HTML, CSS, API, React JS',
+      github: 'https://github.com/KevinJJurado/weatherApp'
+    },
+    {
+      title: 'E-Commerce',
+      image: '/ecommerce.PNG',
+      site:'https://e-commerce-kevin-jurado.netlify.app/',
+      paragraph: 'Pagina que contiene un e-commerce de ropa, información extraida de un API publica',
+      tecnologys: 'HTML, CSS, API, JavaScript',
+      github: 'https://github.com/KevinJJurado/proyect_e_commerce'
     }
-    const dragging = (e) => {
-      if (!isDragStart) return;
-      e.preventDefault()
-      let positionDiff = e.pageX - prevPageX
-      carousel.scrollLeft = prevScrollLeft - positionDiff
-    }
-    const dragStop = () => {
-      isDragStart = false
-    }
-    carousel.addEventListener('mousedown', dragStart)
-    carousel.addEventListener('mousemove', dragging)
-    carousel.addEventListener('mouseup', dragStop)
-  }, [])
+  ]
+
+  const previus = () => {
+      setCurrentSlide((currentSlide - 1 + sliders.length)%sliders.length)
+  }
+  const next = () => {
+      setCurrentSlide((currentSlide + 1)%sliders.length)
+  }
 
   return (
     <div className="principal__projects" id="projects">
       <h2 className="projects__title">Mis Projectos</h2>
       <div className="slider__box">
-        <i id="left" className='bx bx-chevron-left PreviusNext previus'></i>
-        <ul id="sliderId" className="slider__box--carousel">
-          <li className="container__imgSlider">
-            <h3>App Music</h3>
-            <div className="container__imgSlider--content">
-              <div className="container__imgSlider--redirection">
-                <a className="container__imgSlider--img" href="https://app-music-kevin-jurado.netlify.app/" target="_blank"><img src="/app_music.PNG" alt="" /></a>
-                <span className="container__imgSlider-span"><a href="https://app-music-kevin-jurado.netlify.app/" target="_blank">Visitar Pagina<i className='bx bx-chevrons-right redirection'></i></a></span>
+        <i onClick={previus} id="left" className='bx bx-chevron-left PreviusNext previus'></i>
+        {
+          sliders.map((slide, index) => (
+            <section key={index} id="sliderId" className={`${ index === currentSlide ? 'slider__box--carousel' : 'hidden'}`} style={{'--current': `translateX(-100 * ${currentSlide} - 1)`}}>
+              <div className="container__imgSlider">
+                <h3>{slide.title}</h3>
+                <div className="container__imgSlider--content">
+                  <div className="container__imgSlider--redirection">
+                    <a className="container__imgSlider--img" href={slide.site} target="_blank"><img src={slide.image} alt="" /></a>
+                    <span className="container__imgSlider-span"><a href={slide.site} target="_blank">Visitar Pagina<i className='bx bx-chevrons-right redirection'></i></a></span>
+                  </div>
+                  <div className="container__imgSlider--info">
+                    <p>{slide.paragraph}</p>
+                    <p className="container__imgSlider--tec"><span>Tecnologías:</span> {slide.tecnologys}</p>
+                    <p><a href={slide.github} target="_blank"><i className='bx bxl-github container__imgSlider--github'></i></a></p>
+                  </div>
+                </div>
               </div>
-              <div className="container__imgSlider--info">
-                <p>Pagina en la cual se despliega lista de canciones y tambien se puede crear una lista de reporducción, todo esto extraido de la API de spotify y de una API proporcionada por Academlo</p>
-                <p className="container__imgSlider--tec"><span>Tecnologías:</span> HTML, CSS, API, React JS</p>
-                <p><a href="https://github.com/KevinJJurado/app-music-kevin-jurado" target="_blank"><i className='bx bxl-github container__imgSlider--github'></i></a></p>
-              </div>
-            </div>
-          </li>
-          <li className="container__imgSlider">
-            <h3>User Crud</h3>
-            <div className="container__imgSlider--content">
-              <div className="container__imgSlider--redirection">
-                <a className="container__imgSlider--img" href="https://userscrudkevinjurado.netlify.app/" target="_blank"><img src="/userCrud.PNG" alt="" /></a>
-                <span className="container__imgSlider-span"><a href="https://userscrudkevinjurado.netlify.app/" target="_blank">Visitar Pagina<i className='bx bx-chevrons-right redirection'></i></a></span>
-              </div>
-              <div className="container__imgSlider--info">
-                <p>Pagina en la cual se puede crear usuarios, borrar y actualizar, todo esto desde una api publica proporcionada por Academlo</p>
-                <p className="container__imgSlider--tec"><span>Tecnologías:</span> HTML, CSS, API, React JS</p>
-                <p><a href="https://github.com/KevinJJurado/users_crud" target="_blank"><i className='bx bxl-github container__imgSlider--github'></i></a></p>
-              </div>
-            </div>
-          </li>
-          <li className="container__imgSlider">
-            <h3>Pokedex</h3>
-            <div className="container__imgSlider--content">
-              <div className="container__imgSlider--redirection">
-                <a className="container__imgSlider--img" href="https://pokedex-kevin-jurado.netlify.app/" target="_blank"><img src="/pokedex.PNG" alt="" /></a>
-                <span className="container__imgSlider-span"><a href="https://pokedex-kevin-jurado.netlify.app/" target="_blank">Visitar Pagina<i className='bx bx-chevrons-right redirection'></i></a></span>
-              </div>
-              <div className="container__imgSlider--info">
-                <p>Pagina que contiene informacion de la serie animada pokemon, todo extraido de un API publica</p>
-                <p className="container__imgSlider--tec"><span>Tecnologías:</span> HTML, CSS, API, React JS</p>
-                <p><a href="https://github.com/KevinJJurado/pokedex-kevin-jurado" target="_blank"><i className='bx bxl-github container__imgSlider--github'></i></a></p>
-              </div>
-            </div>
-          </li>
-          <li className="container__imgSlider">
-            <h3>Rick and Morty</h3>
-            <div className="container__imgSlider--content">
-              <div className="container__imgSlider--redirection">
-                <a className="container__imgSlider--img" href="https://rickandmorty-kevin-jurado.netlify.app/" target="_blank"><img src="/RickandMorty.PNG" alt="" /></a>
-                <span className="container__imgSlider-span"><a href="https://rickandmorty-kevin-jurado.netlify.app/" target="_blank">Visitar Pagina<i className='bx bx-chevrons-right redirection'></i></a></span>
-              </div>
-              <div className="container__imgSlider--info">
-                <p>Pagina que contiene informacion de la serie animada Rick and Morty, todo extraido de un API publica</p>
-                <p className="container__imgSlider--tec"><span>Tecnologías:</span> HTML, CSS, API, React JS</p>
-                <p><a href="https://github.com/KevinJJurado/entregable3RickandMorty" target="_blank"><i className='bx bxl-github container__imgSlider--github'></i></a></p>
-              </div>
-            </div>
-          </li>
-          <li className="container__imgSlider">
-            <h3>Weather App</h3>
-            <div className="container__imgSlider--content">
-              <div className="container__imgSlider--redirection">
-                <a className="container__imgSlider--img" href="https://weatherapp-kevin-jurado.netlify.app/" target="_blank"><img src="/weatherApp.PNG" alt="" /></a>
-                <span className="container__imgSlider-span"><a href="https://weatherapp-kevin-jurado.netlify.app/" target="_blank">Visitar Pagina<i className='bx bx-chevrons-right redirection'></i></a></span>
-              </div>
-              <div className="container__imgSlider--info">
-                <p>Pagina que contiene informacion del clima en tiempo real, información extraida de un API publica</p>
-                <p className="container__imgSlider--tec"><span>Tecnologías:</span> HTML, CSS, API, React JS</p>
-                <p><a href="https://github.com/KevinJJurado/weatherApp" target="_blank"><i className='bx bxl-github container__imgSlider--github'></i></a></p>
-              </div>
-            </div>
-          </li>
-          <li className="container__imgSlider">
-            <h3>E-Commerce</h3>
-            <div className="container__imgSlider--content">
-              <div className="container__imgSlider--redirection">
-                <a className="container__imgSlider--img" href="https://e-commerce-kevin-jurado.netlify.app/" target="_blank"><img src="/ecommerce.PNG" alt="" /></a>
-                <span className="container__imgSlider-span"><a href="https://e-commerce-kevin-jurado.netlify.app/" target="_blank">Visitar Pagina<i className='bx bx-chevrons-right redirection'></i></a></span>
-              </div>
-              <div className="container__imgSlider--info">
-                <p>Pagina que contiene un e-commerce de ropa, información extraida de un API publica</p>
-                <p className="container__imgSlider--tec"><span>Tecnologías:</span> HTML, CSS, JavaScript, API</p>
-                <p><a href="https://github.com/KevinJJurado/proyect_e_commerce" target="_blank"><i className='bx bxl-github container__imgSlider--github'></i></a></p>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <i id="right" className='bx bx-chevron-right PreviusNext next' ></i>
+            </section>
+          ))
+        }
+        <i onClick={next} id="right" className='bx bx-chevron-right PreviusNext next' ></i>
       </div>
     </div>
   )
