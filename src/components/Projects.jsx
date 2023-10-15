@@ -68,7 +68,7 @@ const Projects = () => {
         <i onClick={previus} id="left" className='bx bx-chevron-left PreviusNext previus'></i>
         {
           sliders.map((slide, index) => (
-            <section key={index} id="sliderId" className={`${ index === currentSlide ? 'slider__box--carousel' : 'hidden'}`} style={{'--current': `translateX(-100 * ${currentSlide} - 1)`}}>
+            <section key={index} id="sliderId" className={`${ index === currentSlide ? 'slider__box--carousel' : 'hidden'}`} >
               <div className="container__imgSlider">
                 <h3>{slide.title}</h3>
                 <div className="container__imgSlider--content">

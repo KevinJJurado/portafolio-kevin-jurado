@@ -4,7 +4,6 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  
 }
 .aboutMe__developer{
   display: flex;
@@ -46,8 +45,8 @@
 .aboutMe__imgtext {
   position: absolute;
   top: 12em;
-  left: 1.5em;
-  width: 48.5%;
+  left: 4em;
+  width: 46%;
   display: flex;
   flex-direction: column;
   padding: 2em;
@@ -75,9 +74,9 @@
 }
 .aboutMe__developer {
   position: absolute;
-  right: 2.5em;
+  right: 4em;
   bottom: 6em;
-  width: 48.5%;
+  width: 46%;
   display: flex;
   flex-direction: column;
   padding: 2em;

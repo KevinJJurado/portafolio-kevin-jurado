@@ -4,7 +4,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 3;
+  z-index: 4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +90,7 @@
     width: 100%;
     height: calc(max-content - 4em);
     padding: 1em 0 2em;
-    z-index: 1;
+    /* z-index: 1; */
     transition: left .5s ease-in-out;
     background-color: black;
   }

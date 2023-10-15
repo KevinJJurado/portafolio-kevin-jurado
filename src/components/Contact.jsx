@@ -25,9 +25,9 @@ const Contact = () => {
       </div>
       <div className="social__networks">
         <ul className="social__networks--list">
-          <li><a href="https://www.linkedin.com/in/kevin-jessid-jurado-enriquez-b98b1b18a/" target="_blank" className="socialNetworks"><i className='bx bxl-linkedin-square' ></i></a></li>
-          <li><a href="https://github.com/KevinJJurado" target="_blank" className="socialNetworks"><i className='bx bxl-github'></i></a></li>
-          <li><a href="mailto:kjuradoe@gmail.com" target="_blank" className="socialNetworks"><i className='bx bxl-gmail' ></i></a></li>
+          <li><a href="https://www.linkedin.com/in/kevin-jessid-jurado-enriquez-b98b1b18a/" target="_blank" className="socialNetworks"><i className='bx bxl-linkedin-square linkedin--icon' ></i></a></li>
+          <li><a href="https://github.com/KevinJJurado" target="_blank" className="socialNetworks"><i className='bx bxl-github github--icon'></i></a></li>
+          <li><a href="mailto:kjuradoe@gmail.com" target="_blank" className="socialNetworks"><i className='bx bxl-gmail gmail--icon' ></i></a></li>
         </ul>
         <p> © Kevin Jurado. Todos los derechos reservados</p>
       </div>

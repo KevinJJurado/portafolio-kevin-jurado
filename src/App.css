@@ -76,10 +76,12 @@ body {
   align-items: center;
   gap: 5em;
   height: 100vh;
+  transition: background-color 0.5s, color .5s;
 }
 .darkmode {
   background-color: black;
   color: white;
+  transition: background-color 0.5s, color .5s;
 }
 
 /* --- CONTENT --- */
