@@ -88,6 +88,18 @@
 .social__networks--list li {
   font-size: 3em;
 }
+@media (max-width: 769px) {
+  .contact__writeMe--form input,
+  .contact__writeMe--form textarea {
+    width: 20em;
+  }
+  .social__networks--list li {
+    font-size: 2em;
+  }
+  .social__networks p {
+    font-size: 0.8em;
+  }
+}
 @media (max-width: 391px) {
   .contact {
     height: 65em;

@@ -1,25 +1,37 @@
 import emailjs from 'emailjs-com'
+import { useForm } from 'react-hook-form'
 
 const Contact = () => {
+  
+  const {handleSubmit, register, reset} = useForm()
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    emailjs.sendForm('service_2oxksqj','template_i17l0d7',e.target,'YR1nRKFY2DFWpbAJx').then(res=>{
-      console.log(res);
-  })
+  const onSubmit = (data, e) => { // Cambié el orden de los parámetros
+    e.preventDefault(); // Añadí preventDefault para evitar que el formulario se envíe automáticamente
+    emailjs.sendForm('service_2oxksqj', 'template_i17l0d7', e.target, 'YR1nRKFY2DFWpbAJx', data)
+      .then((res) => {
+        console.log(res);
+        reset({
+          name: '',
+          email: '',
+          message: ''
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+      })
   }
 
   return (
     <div className="contact" id="contact">
       <h2 className="contact__title">Contacto</h2>
       <div className="contact__writeMe">
-        <form onSubmit={handleSubmit} className="contact__writeMe--form">
+        <form onSubmit={handleSubmit(onSubmit)} className="contact__writeMe--form">
           <label htmlFor="name" >Nombre</label>
-          <input name='name' type="text"placeholder="👨🏻‍💼 Ingrese su nombre" />
+          <input {...register("name")} name='name' type="text"placeholder="👨🏻‍💼 Ingrese su nombre" />
           <label htmlFor="email" >Correo</label>
-          <input name='email' type="text" placeholder="@ Ingrese su correo"/>
+          <input name='email' type="email" {...register("email")} placeholder="@ Ingrese su correo"/>
           <label htmlFor="message">Mensaje</label>
-          <textarea placeholder="✉ Ingrese su mensaje" name="message" id="" cols="30" rows="10"></textarea>
+          <textarea {...register("message")} placeholder="✉ Ingrese su mensaje" name="message" id="" cols="30" rows="10"></textarea>
           <button><i className='bx bxl-telegram' ></i> Enviar</button>
         </form>
       </div>
