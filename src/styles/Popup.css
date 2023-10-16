@@ -11,7 +11,7 @@
   flex-direction: column;
   list-style: none;
 }
-@media (max-width: 391px) {
+@media (max-width: 426px) {
   .Popup {
     width: 6.2em;
     top: 4em;
