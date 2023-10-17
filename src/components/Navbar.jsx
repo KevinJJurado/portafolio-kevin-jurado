@@ -27,8 +27,8 @@ const Navbar = ({ setDarkMode, darkMode }) => {
         <ul className="navbar__list">
           {/* <li className="navbar__item"><a href="#Home">Kevin</a></li> */}
           <li className="navbar__item"><a href="#aboutMe">Acerca de Mi</a></li>
-          <li className="navbar__item"><a href="#projects">Projectos</a></li>
           <li className="navbar__item"><a href="#skills">Habilidades</a></li>
+          <li className="navbar__item"><a href="#projects">Projectos</a></li>
           <li className="navbar__item"><a  href="#contact">Contacto</a></li>
           <li className="navbar__item">
             <label className="ui-switch">
