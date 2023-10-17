@@ -8,7 +8,7 @@ const Projects = () => {
       title: 'App Music',
       image: '/app_music.PNG',
       site:'https://app-music-kevin-jurado.netlify.app/',
-      paragraph: 'Pagina en la cual se despliega lista de canciones y tambien se puede crear una lista de reporducción, todo esto extraido de la API de spotify y de una API proporcionada por Academlo',
+      paragraph: 'Pagina en la cual se despliega lista de canciones y también se puede crear una lista de reproducción, todo esto extraído de la API de Spotify y de una API proporcionada por Academlo',
       tecnologys: 'HTML, CSS, API, React JS',
       github: 'https://github.com/KevinJJurado/app-music-kevin-jurado'
     },
@@ -24,7 +24,7 @@ const Projects = () => {
       title: 'Pokedex',
       image: '/pokedex.PNG',
       site:'https://pokedex-kevin-jurado.netlify.app/',
-      paragraph: 'Pagina que contiene informacion de la serie animada pokemon, todo extraido de un API publica',
+      paragraph: 'Pagina que contiene información de la serie animada Pokémon, todo extraído de un API publica',
       tecnologys: 'HTML, CSS, API, React JS',
       github: 'https://github.com/KevinJJurado/pokedex-kevin-jurado'
     },
@@ -32,7 +32,7 @@ const Projects = () => {
       title: 'Rick and Morty',
       image: '/RickandMorty.PNG',
       site:'https://rickandmorty-kevin-jurado.netlify.app/',
-      paragraph: 'Pagina que contiene informacion de la serie animada Rick and Morty, todo extraido de un API publica',
+      paragraph: 'Pagina que contiene información de la serie animada Rick and Morty, todo extraído de un API publica.',
       tecnologys: 'HTML, CSS, API, React JS',
       github: 'https://github.com/KevinJJurado/entregable3RickandMorty'
     },
@@ -40,7 +40,7 @@ const Projects = () => {
       title: 'Weather App',
       image: '/weatherApp.PNG',
       site:'https://weatherapp-kevin-jurado.netlify.app/',
-      paragraph: 'Pagina que contiene informacion del clima en tiempo real, información extraida de un API publica',
+      paragraph: 'Pagina que contiene información del clima en tiempo real, información extraida de un API publica',
       tecnologys: 'HTML, CSS, API, React JS',
       github: 'https://github.com/KevinJJurado/weatherApp'
     },
@@ -48,7 +48,7 @@ const Projects = () => {
       title: 'E-Commerce',
       image: '/ecommerce.PNG',
       site:'https://e-commerce-kevin-jurado.netlify.app/',
-      paragraph: 'Pagina que contiene un e-commerce de ropa, información extraida de un API publica',
+      paragraph: 'Pagina que contiene un e-commerce de ropa, información extraída de un API publica',
       tecnologys: 'HTML, CSS, API, JavaScript',
       github: 'https://github.com/KevinJJurado/proyect_e_commerce'
     }
