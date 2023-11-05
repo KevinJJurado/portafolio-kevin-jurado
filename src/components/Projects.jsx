@@ -63,7 +63,7 @@ const Projects = () => {
 
   return (
     <div className="principal__projects" id="projects">
-      <h2 className="projects__title">Mis Projectos</h2>
+      <h2 className="projects__title">Mis Proyectos</h2>
       <div className="slider__box">
         <i onClick={previus} id="left" className='bx bx-chevron-left PreviusNext previus'></i>
         {
